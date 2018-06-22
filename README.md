@@ -57,7 +57,7 @@ This kind-of simple script uses LuaJIT's FFI library to load the SDL library. [S
 ## Usage
 Using the library within Lua is pretty simple...
 ```lua
-audio = require("audio.audio)
+audio = require("audio.audio")
 audio.init()     -- Initialize the audio library.
 ```
 Load a WAV file: (I might add in support for other audio formats soon.)
