@@ -1,9 +1,12 @@
 # Audio library for The Powder Toy
+#### Version 0.8
 The "first true implementation"(?) of audio in TPT, within TPT itself, without the use of external programs. Uses an external library (SDL) instead, which could be easily gathered. SDL is cross-platform, so it can (probably) work anywhere TPT is on (as long as it has LuaJIT support, and SDL libraries are available).
 
 Forum link [here](http://tpt.io/.305157).
 
 This kind-of simple script uses LuaJIT's FFI library to load the SDL library. [SDL](https://www.libsdl.org/index.php) stands for Simple DirectMedia Layer, which is a cross-platform library that provides access to graphics, audio, input, and et cetera. It's a C library, meaning you cannot load it with Lua `require()`. The FFI library does the magic, though it needs a header file for it to work (See [`SDL-FFI.h`](audio/SDL-FFI.h)).
+
+Note: current version only supports WAV files for the meantime.
 
 ## Requirements
 * TPT version 92.2 (build 333) and up. (Which supports LuaJIT)
