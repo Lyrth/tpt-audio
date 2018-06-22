@@ -1,6 +1,8 @@
 # Audio library for The Powder Toy
 The "first true implementation"(?) of audio in TPT, within TPT itself, without the use of external programs. Uses an external library (SDL) instead, which could be easily gathered. SDL is cross-platform, so it can (probably) work anywhere TPT is on (as long as it has LuaJIT support, and SDL libraries are available).
 
+Forum link [here](http://tpt.io/.305157).
+
 This kind-of simple script uses LuaJIT's FFI library to load the SDL library. [SDL](https://www.libsdl.org/index.php) stands for Simple DirectMedia Layer, which is a cross-platform library that provides access to graphics, audio, input, and et cetera. It's a C library, meaning you cannot load it with Lua `require()`. The FFI library does the magic, though it needs a header file for it to work (See [`SDL-FFI.h`](audio/SDL-FFI.h)).
 
 ## Requirements
@@ -10,7 +12,7 @@ This kind-of simple script uses LuaJIT's FFI library to load the SDL library. [S
 ## Installation
 ### Windows
 1. Clone this repository somewhere on your computer.
-2. Place the `audio` folder from this repo into your Powder installation folder. __Place the folder, not the files within it.__
+2. Place the `audio` folder from this repo into your Powder installation folder. __Place the folder itself, not the files within it.__
 3. Download the SDL libraries.
    - For SDL2, navigate [here](https://www.libsdl.org/download-2.0.php) and download the 32-bit Windows runtime binary [(direct link)](https://www.libsdl.org/release/SDL2-2.0.8-win32-x86.zip). __Always__ choose 32-bit (x86) regardless of your computer type, as TPT is 32-bit.
    - For SDL_mixer, get it [here](https://www.libsdl.org/projects/SDL_mixer/). Again, 32-bit Windows runtime binaries [(direct link)](https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.2-win32-x86.zip).
@@ -56,6 +58,7 @@ This kind-of simple script uses LuaJIT's FFI library to load the SDL library. [S
 Using the library within Lua is pretty simple...
 ```lua
 audio = require("audio.audio)
+audio.init()     -- Initialize the audio library.
 ```
 Load a WAV file: (I might add in support for other audio formats soon.)
 ```lua
